@@ -3,10 +3,12 @@ var Router = require('react-router');
 var UserProfile = require('../components/GitHub/UserProfile');
 var Repos = require('../components/GitHub/Repos');
 var Notes = require('../components/GitHub/Notes');
+var ReactFireMixin = require('reactfire');
+var Firebase = require('firebase');
 
 var Profile = React.createClass({
 
-	mixins: [Router.State],
+	mixins: [Router.State, ReactFireMixin],
 
 	getInitialState: function() {
 		return {
@@ -14,6 +16,16 @@ var Profile = React.createClass({
 			bio: {},
 			repos: []
 		};
+	},
+
+	componentDidMount: function() {
+		this.ref = new Firebase('https://armno-github-notes.firebaseio.com');
+		var childRef = this.ref.child(this.getParams().username);
+		this.bindAsArray(childRef, 'notes');
+	},
+
+	componentWillUnmount: function() {
+		this.unbind('notes');
 	},
 
 	render: function() {
