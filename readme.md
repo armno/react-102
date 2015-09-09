@@ -10,3 +10,4 @@ Learning React with Egghead.io
 - `mixins`: sharable functions/methods for many components
 - `this.getParams().<key>` to get path's named parameters.
 - `Profile` component keeps data in its `states` and pass to child components via their `props`
+- `propTypes` is used for validating passed properties to a component
