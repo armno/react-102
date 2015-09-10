@@ -24,3 +24,4 @@ $ webpack -w
 - `props` can also take functions. we can share functions between components and/or sub-components by passing a function from parent component as a `prop` to it child.
 - `transitionTo` method in `Router.Navigation`: transition to another named route with data object, which i think, is transformed to `Router`'s parameters.
 - `axios` is a http client that is based on promise api. like `$http` in angular or `fetch` in react-native
+- `key` is always needed for each items in array of components

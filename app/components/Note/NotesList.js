@@ -7,7 +7,7 @@ var NotesList = React.createClass({
 			return (
 				<li className="list-group-item" key={index}>{note}</li>
 			);
-		});
+		}).reverse();
 
 		return (
 			<ul className="list-group">

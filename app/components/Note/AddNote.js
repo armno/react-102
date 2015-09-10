@@ -12,14 +12,16 @@ var AddNote = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="input-group">
-				<input type="text" className="form-control" ref="note" placeholder="Add new note" />
-				<span className="input-group-btn">
-					<button className="btn btn-default" type="button" onClick={ this.handleSubmit }>
-						Submit
-					</button>
-				</span>
-			</div>
+			<form className="form-inline">
+				<div className="form-group">
+					<div className="input-group">
+						<input type="text" className="form-control" ref="note" placeholder="Add new note" />
+					</div>
+				</div>
+				<button className="btn btn-default" type="button" onClick={ this.handleSubmit }>
+					Submit
+				</button>
+			</form>
 		)
 	}
 });
