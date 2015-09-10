@@ -23,3 +23,4 @@ $ webpack -w
 - Firebase in React: `Firebase` instance (core, i guess) and `ReactFireMixins`: firebase functionality in react.
 - `props` can also take functions. we can share functions between components and/or sub-components by passing a function from parent component as a `prop` to it child.
 - `transitionTo` method in `Router.Navigation`: transition to another named route with data object, which i think, is transformed to `Router`'s parameters.
+- `axios` is a http client that is based on promise api. like `$http` in angular or `fetch` in react-native

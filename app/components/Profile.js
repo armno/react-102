@@ -5,6 +5,7 @@ var Repos = require('../components/GitHub/Repos');
 var Notes = require('../components/GitHub/Notes');
 var ReactFireMixin = require('reactfire');
 var Firebase = require('firebase');
+var helpers = require('./utils/helpers.js');
 
 var Profile = React.createClass({
 
@@ -22,6 +23,14 @@ var Profile = React.createClass({
 		this.ref = new Firebase('https://armno-github-notes.firebaseio.com');
 		var childRef = this.ref.child(this.getParams().username);
 		this.bindAsArray(childRef, 'notes');
+
+		helpers.getGitHubInfo(this.getParams().username)
+			.then(function(dataObject) {
+				this.setState({
+					bio: dataObject.bio,
+					repos: dataObject.repos
+				});
+			}.bind(this));
 	},
 
 	componentWillUnmount: function() {
