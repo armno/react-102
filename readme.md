@@ -21,3 +21,4 @@ $ webpack -w
 - `componentWillUnmount`: unbind events
 - React Mixins: bring more functions/methods to the component (via `this`)
 - Firebase in React: `Firebase` instance (core, i guess) and `ReactFireMixins`: firebase functionality in react.
+- `props` can also take functions. we can share functions between components and/or sub-components by passing a function from parent component as a `prop` to it child.
