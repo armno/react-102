@@ -23648,8 +23648,7 @@
 			};
 		},
 
-		componentDidMount: function componentDidMount() {
-			this.ref = new Firebase('https://armno-github-notes.firebaseio.com');
+		init: function init() {
 			var childRef = this.ref.child(this.getParams().username);
 			this.bindAsArray(childRef, 'notes');
 
@@ -23661,8 +23660,18 @@
 			}).bind(this));
 		},
 
+		componentDidMount: function componentDidMount() {
+			this.ref = new Firebase('https://armno-github-notes.firebaseio.com');
+			this.init();
+		},
+
 		componentWillUnmount: function componentWillUnmount() {
 			this.unbind('notes');
+		},
+
+		componentWillReceiveProps: function componentWillReceiveProps() {
+			this.unbind('notes');
+			this.init();
 		},
 
 		render: function render() {

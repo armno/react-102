@@ -25,3 +25,4 @@ $ webpack -w
 - `transitionTo` method in `Router.Navigation`: transition to another named route with data object, which i think, is transformed to `Router`'s parameters.
 - `axios` is a http client that is based on promise api. like `$http` in angular or `fetch` in react-native
 - `key` is always needed for each items in array of components
+- `componentWillReceiveProps`: runs when the component receive new properties. in our case: `Profile` component receives `username` prop from search box. so we need to unbind firebase from existing `notes` prop. and also fetch new data from github api.
